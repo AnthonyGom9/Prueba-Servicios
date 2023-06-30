@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+
+<section class="welcome-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <h1 class="display-4">Consulta facturas</h1>
+                <form [formGroup]="Formgroup">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="fill" style="margin-right: 20px;width: 100%;">
+                                <mat-label>Nit</mat-label>
+                                <input matInput type="text" maxlength="100" formControlName="nit" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <button mat-raised-button color="primary" (click)="consultarFactura()">Consultar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="border: 1px solid;">
+        <h2>Factura</h2>
+
+        <div class="invoice-details">
+            <table>
+                <tr>
+                    <td>Nombre de la empresa:</td>
+                    <td>{{ nombreEmpresa }}</td>
+                </tr>
+                <tr>
+                    <td>Nombre del cliente:</td>
+                    <td>{{ datos.nombre }}</td>
+                </tr>
+                <tr>
+                    <td>NIT:</td>
+                    <td>{{ datos.nit }}</td>
+                </tr>
+                <tr>
+                    <td>Forma de pago:</td>
+                    <td>{{ datos.selected }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="products-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio unitario</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productos">
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>{{ producto.precioUnitario }}</td>
+                    <td>{{ producto.total }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

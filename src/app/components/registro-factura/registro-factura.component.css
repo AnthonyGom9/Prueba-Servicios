@@ -1,0 +1,25 @@
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .invoice-details table {
+    width: 100%;
+  }
+  
+  .invoice-details table td {
+    padding: 5px;
+  }
+  
+  .products-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .products-table th,
+  .products-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
